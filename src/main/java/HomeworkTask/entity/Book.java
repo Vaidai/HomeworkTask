@@ -1,5 +1,6 @@
 package HomeworkTask.entity;
 
+import HomeworkTask.services.CalculatorService;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
-public class Book {
+public class Book implements CalculatorService {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer bookId;
@@ -30,5 +31,10 @@ public class Book {
         this.barcode = barcode;
         this.quantity = quantity;
         this.pricePerUnit = pricePerUnit;
+    }
+
+    @Override
+    public BigDecimal calculateTotalPrice() {
+        return pricePerUnit.multiply(new BigDecimal(quantity));
     }
 }

@@ -1,10 +1,12 @@
 package HomeworkTask.entity;
 
+import HomeworkTask.services.CalculatorService;
+
 import javax.persistence.Entity;
 import java.math.BigDecimal;
 
 @Entity
-public class ScienceJournal extends Book {
+public class ScienceJournal extends Book implements CalculatorService {
     private int scienceIndex;
 
     public ScienceJournal(BookType bookType, String name, String author, String barcode, int quantity, BigDecimal pricePerUnit, int scienceIndex) {
@@ -16,5 +18,10 @@ public class ScienceJournal extends Book {
         if (scienceIndex >= 10 || scienceIndex < 0)
             throw new IllegalArgumentException("Index must be >=0 and <=10");
         this.scienceIndex = scienceIndex;
+    }
+
+    @Override
+    public BigDecimal calculateTotalPrice() {
+        return getPricePerUnit().multiply(new BigDecimal(getQuantity())).multiply(new BigDecimal(scienceIndex));
     }
 }
