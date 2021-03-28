@@ -1,13 +1,17 @@
 package HomeworkTask.entity;
 
 import HomeworkTask.services.CalculatorService;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import javax.persistence.Entity;
 import java.math.BigDecimal;
 
+@JsonTypeName("scienceJournal")
 @Entity
 public class ScienceJournal extends Book implements CalculatorService {
     private int scienceIndex;
+
+    public ScienceJournal(){}
 
     public ScienceJournal(BookType bookType, String name, String author, String barcode, int quantity, BigDecimal pricePerUnit, int scienceIndex) {
         super(bookType, name, author, barcode, quantity, pricePerUnit);
