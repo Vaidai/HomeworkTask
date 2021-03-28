@@ -33,10 +33,9 @@ public class BookService {
         return bookRepository.findBookByBarcode(barcode);
     }
 
-    public void updateBook(Book book) {
-        bookRepository.save(book);
+    public Book updateBook(Book book) {
+        return bookRepository.save(book);
     }
-
 
     public BigDecimal calculateTotalPrice(String barcode) {
         Book book = bookRepository.findBookByBarcode(barcode);
@@ -46,5 +45,6 @@ public class BookService {
     public List<Book> sortBooksByQuantity() {
         return findAllBooks().stream().sorted(Comparator.comparing(p -> p.getQuantity())).collect(Collectors.toList());
     }
+
 
 }

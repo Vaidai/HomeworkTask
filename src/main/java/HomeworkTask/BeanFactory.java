@@ -22,7 +22,7 @@ public class BeanFactory {
     CommandLineRunner runner(BookRepository bookRepository) {
         return args -> {
             bookRepository.save(new Book(BookType.REGULAR_BOOK, "Title1", "RegularBookAuthor", "RE123", 2, new BigDecimal(1.5)));
-            bookRepository.save(new AntiqueBook(BookType.ANTIQUE_BOOK, "Title2", "AntiqueBookAuthor", "AN123", 2, new BigDecimal(2.5), 1999));
+            bookRepository.save(new AntiqueBook(BookType.ANTIQUE_BOOK, "Title2", "AntiqueBookAuthor", "AN123", 1, new BigDecimal(2.5), 1999));
             bookRepository.save(new ScienceJournal(BookType.SCIENCE_JOURNAL, "Title3", "ScienceJournal", "Sc123", 3, new BigDecimal(3), 8));
         };
     }

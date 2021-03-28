@@ -20,7 +20,7 @@ public class BookController {
         return bookService.findAllBooks();
     }
 
-    @PostMapping(value = "/addBook", consumes = {"application/json"})
+    @PostMapping(value = "/book", consumes = {"application/json"})
     public Book addBook(@RequestBody Book book) {
         return bookService.saveNewBook(book);
     }
@@ -30,9 +30,9 @@ public class BookController {
         return bookService.findBookByBarcode(barcode);
     }
 
-    @PutMapping(value = "/book/{barcode}", consumes = {"application/json"})
-    public void updatedBookByBarcode(@RequestBody Book book) {
-        bookService.updateBook(book);
+    @PutMapping(value = "/book", consumes = {"application/json"})
+    public Book updateBook(@RequestBody Book book) {
+        return bookService.updateBook(book);
     }
 
     @GetMapping("/book/{barcode}/totalPrice")
