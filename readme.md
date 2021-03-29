@@ -1,4 +1,4 @@
-#ReadMe
+**ReadMe**
 Implementation description for junior homework task.
 
 #REST API
