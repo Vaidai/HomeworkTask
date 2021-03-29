@@ -1,10 +1,10 @@
 **ReadMe**
 Implementation description for junior homework task.
 
-#REST API
+# REST API
 The REST API to the example app is described below.
 
-###1. Types of books
+### 1. Types of books
 ~~~~
 book
 antiqueBook
