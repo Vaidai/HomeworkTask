@@ -11,12 +11,12 @@ antiqueBook
 scienceJournal
 ~~~~
 
-###2. Get list of Books
-#####Request
+### 2. Get list of Books
+##### Request
 GET   /books
 
-###3. Add a new book to the list
-#####Request
+### 3. Add a new book to the list
+##### Request
 POST   /book 
 ~~~~
 {
@@ -30,13 +30,13 @@ POST   /book
 }
 ~~~~
 
-###4. Retrieve book information by providing its barcode
-#####Request
+### 4. Retrieve book information by providing its barcode
+##### Request
 
 GET   /book/{barcode}
 
-###5. Update any of book detail by providing the barcode
-#####Request
+### 5. Update any of book detail by providing the barcode
+##### Request
 PUT   /book
 
 ~~~~
@@ -51,11 +51,11 @@ PUT   /book
 }
 ~~~~
 
-###6. Calculate the total price of specific book by given the barcode
-#####Request
+### 6. Calculate the total price of specific book by given the barcode
+##### Request
 GET   /book/{barcode}/totalPrice
 
     
-###7. Get list of all barcodes for the books in stock grouped by quantity
-#####Request
+### 7. Get list of all barcodes for the books in stock grouped by quantity
+##### Request
 GET   /books/sort
